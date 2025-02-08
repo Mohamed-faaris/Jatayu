@@ -9,15 +9,11 @@ const PORT = 3000;
 
 app.use(express.json());
 app.use(cors());
-app.use(express.static('public')); // Serve static files (HTML, CSS, JS)
 
 const API_KEY = process.env.GEMINI_API_KEY;
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
 
-if (!API_KEY) {
-    console.error("⚠️ ERROR: Missing GEMINI_API_KEY in .env file");
-    process.exit(1); // Stop execution if API key is missing
-}
+
 
 // Route to handle AI requests
 app.post('/generate', async (req, res) => {
@@ -48,10 +44,7 @@ app.post('/generate', async (req, res) => {
 });
 
 
-// Serve HTML file when user visits root URL
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
+
 
 app.listen(PORT, () => {
     console.log(`🚀 Server running at http://localhost:${PORT}`);
