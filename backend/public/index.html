@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat</title>
+    <style>
+        body { 
+            background: #000000;
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            margin: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 50vh;
+        }
+
+        textarea { 
+            width: 350px; 
+            height: 130px; 
+            padding: 10px; 
+            border: 2px solid #cccccc15; 
+            border-radius: 5px; 
+            font-size: 16px;
+            margin-bottom: 5px;
+            background:rgba(102, 101, 101, 0.215);
+            font-style: italic;
+            font-family: 'Times New Roman', Times, serif;
+            color: blue;
+        }
+
+        button { 
+            padding: 10px 20px; 
+            cursor: pointer; 
+            background-color: #8fdd91; 
+            color: rgb(0, 0, 0); 
+            border: none; 
+            border-radius: 5px; 
+            font-size: 16px;
+        }
+
+        button:hover { 
+            background-color: #45a049; 
+        }
+
+        /* Center the response box */
+        #response {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        /* Response box styling */
+        .response-box {
+            padding: 20px;
+            background-color: #2317179d;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            width: 100%;
+            min-height: 120px;
+            font-size: 18px;
+            text-align: left;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        /* Loading message style */
+        .loading {
+            font-style: italic;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: white;">Job Description</h1>
+    <textarea id="userPrompt" placeholder="Enter your Job Description..."></textarea><br>
+    <button onclick="sendPrompt()">Sumbit</button>
+    <div id="response"></div>
+
+    <script>
+        async function sendPrompt() {
+            const prompt = document.getElementById('userPrompt').value;
+            const responseDiv = document.getElementById('response');
+
+            if (!prompt.trim()) {
+                responseDiv.innerText = "Please enter a prompt!";
+                return;
+            }
+
+            responseDiv.innerHTML = '<div class="loading">Generating response...</div>';
+
+            try {
+                const response = await fetch('http://localhost:3000/generate', { 
+                    method: 'POST', 
+                    headers: { 'Content-Type': 'application/json' }, 
+                    body: JSON.stringify({ prompt }) 
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Server error: ${response.status}`);
+                }
+
+                const data = await response.json();
+                const aiResponse = data.response || "No response from AI";
+
+                responseDiv.innerHTML = `<div class="response-box">${aiResponse}</div>`;
+            } catch (error) {
+                responseDiv.innerHTML = `<div class="response-box" style="color: red;">Error: ${error.message}</div>`;
+                console.error("Fetch error:", error);
+            }
+        }
+    </script>
+</body>
+</html>
