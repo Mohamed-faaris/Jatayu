@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b16b313b-a817-47ad-9659-91e3f11dbfc4" name="Changes" comment="" />
+    <list default="true" id="b16b313b-a817-47ad-9659-91e3f11dbfc4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/frontend-user/src/components/App.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend-user/src/components/DateCounter.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend-user/src/components/React_logo1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,18 +46,27 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/PROJECTS/Jatayu",
+    "last_opened_file_path": "C:/PROJECTS/Jatayu/frontend-user/src",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "npm.dev.executor": "Run",
-    "ts.external.directory.path": "C:\\PROJECTS\\Jatayu\\frontend-admin\\node_modules\\typescript\\lib",
+    "npm.start.executor": "Run",
+    "ts.external.directory.path": "C:\\PROJECTS\\Jatayu\\frontend-user\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\PROJECTS\Jatayu\frontend-user\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\PROJECTS\Jatayu" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.start">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/frontend-admin/package.json" />
       <command value="run" />
@@ -61,8 +77,19 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/fronend-client/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start" />
         <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
@@ -84,7 +111,8 @@
       <updated>1738923460202</updated>
       <workItem from="1738923461506" duration="2921000" />
       <workItem from="1738946740943" duration="326000" />
-      <workItem from="1739006702312" duration="3606000" />
+      <workItem from="1739006702312" duration="5403000" />
+      <workItem from="1739161845803" duration="1677000" />
     </task>
     <servers />
   </component>
